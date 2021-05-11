@@ -22,4 +22,9 @@ namespace TestConsoleApp
             return theString;
         }
     }
+
+class MyClass
+{
+    //
+}
 }
