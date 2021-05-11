@@ -1,25 +1,72 @@
 ﻿using System;
-//Author: 
+//Author: Malthe
 namespace TestConsoleApp
 {
     internal class Program
     {
         public static void Main(string[] args)
         {
-            WhatAClass wat = new WhatAClass();
-            Console.WriteLine(wat.getTheString());
+            Person Malthe = new Person("Malthe Petersen");
+            Console.WriteLine(Malthe.getName());
+            Console.WriteLine(Malthe.hasCar());
+            Malthe.setCar("Ford Fiesta");
+            Console.WriteLine(Malthe.hasCar());
+            Console.WriteLine(Malthe.getCar().getCarModelName());
         }
     }
-/// <summary>
-/// Class holds a constant attribute, and a method for returning said attribute.
-/// </summary>
-    class WhatAClass
+
+class Person
+{
+    private String name;
+    private Car car;
+    public Person(String name)
     {
-        private String theString = "The one string";
-        
-        public String getTheString()
-        {
-            return theString;
-        }
+        this.name = name;
     }
+    public String getName() 
+    {
+        return name;
+    }
+
+    public void setCar(String carModelName)
+    {
+        this.car = new Car(carModelName);
+    }
+
+    public Car getCar()
+    {
+        return car;
+    }
+
+    public Boolean hasCar()
+    {
+        if (car != null)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
+class Car
+{
+    private String carModelName;
+
+    public Car(String carModelName)
+    {
+        this.carModelName = carModelName;
+    }
+
+    public void setCarModelName(String carModelName)
+    {
+        this.carModelName = carModelName;
+    }
+
+    public String getCarModelName()
+    {
+        return carModelName;
+    }
+    
+}
+
 }
